@@ -6,6 +6,9 @@ from dataclasses import dataclass
 
 from src.exception import CustomException
 from src.logger import logging
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationCongfig
+
 
 # Configuration for data ingestion paths
 @dataclass
@@ -60,5 +63,8 @@ class DataIngestion:
 if __name__ == "__main__":
     # Instantiate DataIngestion class and perform ingestion
     data_ingestion = DataIngestion()
-    data_ingestion.initiate_data_ingestion()
+    train_data, test_data = data_ingestion.initiate_data_ingestion()
+
+    data_transformation = DataTransformation()
+    data_transformation.initiate_data_transformation(train_data, test_data)
 
