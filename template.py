@@ -25,6 +25,8 @@ list_of_files = [
     
     "notebooks/main.ipynb",
     "notebooks/data/abc.csv",
+
+    "template/abc.html",
     
     "requirements.txt",
     "setup.py",
